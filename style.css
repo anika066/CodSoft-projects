@@ -1,118 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root{
-    --text: 1.5rem;
-    --head: calc(1rem + 5vw);
-    --bg-color: #f6b93b;
-}
-body{
     font-family: "Poppins", sans-serif;
 }
 
-.hero-section{
-    min-height: 100vh;
-    background: url("images/pexels-valeriya-1639557(1).jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: 2;
-    animation: slide 1s ease-in-out;
-}
-
-.navbar{
+body{
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    padding: 0rem 1.5rem;
-    color: white;
-    transform: translateY(-100%);
-    animation: movedown 850ms ease-in 1s forwards;
-}
-
-@keyframes movedown{
-    from{
-        transform: translateY(-100%);
-    }
-    to{
-        transform: translateY(0%);
-    }
-}
-
-.navbar ul{
-    list-style: none;
-}
-
-.navbar ul li{
-    display: inline-block;
-    margin-left: 3rem;
-    font-size: var(--text);
-}
-
-.navbar ul li a{
-   text-decoration: none;
-   color: white;
-   border: 2px solid transparent;
-}
-
-.navbar ul li a:hover{
- border-bottom: 2px solid white;
-}
-
-.hero-text{
-    color: white;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
 }
 
-@keyframes slide{
-    from{
-        transform: translateX(-100%);
-    }to{
-        transform: translateX(0%);
-    }
+.calculator{
+    border: 1px solid #717377;
+    padding: 20px;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0px 3px 15px #rgba(113, 115, 119, 0.5);
 }
 
-.hero-text::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    z-index: 1;
-    top: 0;
-    opacity: 0.6;
+input{
+    width: 320px;
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgbs(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+    color: #ffffff;
 }
 
-.hero-text a {
-    color: white;
-    background: var(--bg-color);
-    font-weight: 600;
-    font-size: var(--text);
-    padding: 0.8rem 1rem;
-    margin: 0.8rem auto;
-    display: block;
-    transition: opacity 250ms linear;
+input::placeholder{
+    columns: #ffffff;
 }
 
-.hero-text a:hover{
-    opacity: 0.8;
+button{
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
-.hero-text h2{
-    font-size: var(--head);
+.equalBtn{
+    background-color: #fb7c14;
 }
 
-.hero-text p{
-    font-size: 2rem;
+.operator{
+    color: #6dee0a;
 }
