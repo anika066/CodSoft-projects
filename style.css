@@ -1,154 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root{
+    --text: 1.5rem;
+    --head: calc(1rem + 5vw);
+    --bg-color: #f6b93b;
+}
+body{
     font-family: "Poppins", sans-serif;
 }
 
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: #031540;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-}
-
-.logo{
-    font-size: 25px;
-    color: #031540;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.navbar a{
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-}
-
-
-.navbar a:hover,
-.navbar a.active{
-    color: #00abf0;
-}
-
-.home{
-    height: 100vh;
-    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-}
-
-.home-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-    background: #031540;
-    border-radius: 50%;
-    border: 25px solid #fff;
-    outline: 25px solid #031540;
-    padding-right: 7%;
-
-}
-
-.home-image img{
-    position: relative;
-    bottom: 22px;
-    max-width: 380px;
-}
-
-
-.home-content{
-    max-width: 600px;
-    color: #fff;
-    text-align: right;
-}
-
-.home-content h1{
-    font-size: 55px;
-    line-height: 1.2;
-}
-
-.home-content h3{
-    font-size: 40px;
-    -webkit-text-stroke: .5px #fff;
-    font-size: 59px;
-    color: transparent;
-    background-image: linear-gradient(#00abf0, #00abf0 );
+.hero-section{
+    min-height: 100vh;
+    background: url("images/pexels-valeriya-1639557(1).jpg");
     background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-position: -410px 0;
-    animation: animateText 6s linear infinite;
-}
-@keyframes animateText{
-0%,95%,100%{
-    background-position: -410px 0;
-}
-65%,85% {
-    background-position: 0 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    animation: slide 1s ease-in-out;
 }
 
-}
-s
-.home-content p{
-    font-size: 16px;
-    margin-top: 20px;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0rem 1.5rem;
+    color: white;
+    transform: translateY(-100%);
+    animation: movedown 850ms ease-in 1s forwards;
 }
 
-.home-sci{
-    margin: 25px 0 40px;
+@keyframes movedown{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
 }
 
+.navbar ul{
+    list-style: none;
+}
 
-.home-sci a{
-    display: inline-flex;
+.navbar ul li{
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: var(--text);
+}
+
+.navbar ul li a{
+   text-decoration: none;
+   color: white;
+   border: 2px solid transparent;
+}
+
+.navbar ul li a:hover{
+ border-bottom: 2px solid white;
+}
+
+.hero-text{
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #00abf0;
-    text-decoration: none;
-    margin-left: 12px;
-    transition: .5s;
+    
 }
 
-.home-sci a:hover{
-    background: #00abf0;
-    color: #fff;
-    border-color: #00abf0;
-    box-shadow: 0 0 10px #00abf0;
+@keyframes slide{
+    from{
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0%);
+    }
 }
 
-.btn{
-    padding: 12px 35px;
-    background: #00abf0;
-    border-radius: 40px;
-    font-size: 17px;
-    color: #fff;
-    text-decoration: none;
+.hero-text::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1;
+    top: 0;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    color: white;
+    background: var(--bg-color);
     font-weight: 600;
-    letter-spacing: 1px;
-    box-shadow: 0 0 10px #00abf0;
-    transition: .5s;
+    font-size: var(--text);
+    padding: 0.8rem 1rem;
+    margin: 0.8rem auto;
+    display: block;
+    transition: opacity 250ms linear;
 }
 
-.btn:hover{
-    box-shadow: none;
+.hero-text a:hover{
+    opacity: 0.8;
+}
+
+.hero-text h2{
+    font-size: var(--head);
+}
+
+.hero-text p{
+    font-size: 2rem;
 }
